@@ -6,12 +6,8 @@ const port =  process.env.NODE_ENV === "production" ? (process.env.PORT || 3000)
 
 
 app.get('/', (req, res) => {
-
-  if (!req?.query?.src) res.send("Hello");
-
   readFile(resolve(__dirname, "./static/index.html"),  (c, t) => {
-    
-    let html = t.toString().replace(/{{src}}/gi, req?.query?.src);
+    let html = t.toString().replace(/{{src}}/gi, req?.query?.src || "//57.annacdn.cc/DLhqnGFR1GmS/tv-series/13302");
     res.setHeader("content-type", "text/html");
     res.send(html);
   })
