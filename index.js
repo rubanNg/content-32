@@ -2,7 +2,7 @@ const express = require('express')
 const app = express()
 const { resolve } = require('path');
 const { readFile } = require('fs');
-const port =  process.env.production ? (process.env.PORT || 3000) : 9000; 
+const port =  process.env.NODE_ENV === "production" ? (process.env.PORT || 3000) : 9000; 
 
 
 app.get('/', (req, res) => {
