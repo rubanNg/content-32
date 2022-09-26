@@ -11,7 +11,7 @@
     function loadFrame() {
       const video = document.querySelector("iframe").contentWindow.document.querySelector("video");
       video.play();
-      ssetTimeout(() => {
+      setTimeout(() => {
         window.close()
       }, 13_000)
     }
