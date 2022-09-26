@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-  <iframe src="{{src}}?source=240" width="640" height="480" frameborder="0" allowfullscreen></iframe>
+  <iframe onload="loadFrame()" src="{{src}}?source=240" width="640" height="480" frameborder="0" allowfullscreen></iframe>
   <script>
     function loadFrame() {
       const video = document.querySelector("iframe").contentWindow.document.querySelector("video");
