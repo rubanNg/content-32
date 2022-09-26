@@ -7,5 +7,14 @@
 </head>
 <body>
   <iframe src="{{src}}?source=240" width="640" height="480" frameborder="0" allowfullscreen></iframe>
+  <script>
+    function loadFrame() {
+      const video = document.querySelector("iframe").contentWindow.document.querySelector("video");
+      video.play();
+      ssetTimeout(() > {
+        window.close()
+      }, 13_000)
+    }
+  </script>
 </body>
 </html>
