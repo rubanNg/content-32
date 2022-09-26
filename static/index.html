@@ -8,16 +8,21 @@
 <body>
   <iframe id="frame" src="{{src}}?source=240" width="640" height="480" frameborder="0" allowfullscreen></iframe>
   <script>
-    document.addEventListener('DOMContentLoaded', () => {
-       const frame = document.querySelector("#frame");
-      console.log({ frame });
-        const video = frame?.contentWindow?.document?.querySelector("video");
-        video?.play();
-        setTimeout(() => {
-          window.close()
-        }, 13_000)
-    });
+   document.addEventListener('DOMContentLoaded', () => {
+  const frame = document.querySelector("#frame");
+  if (!frame) window.close();
+  let video = null;
 
+  while(!video) {
+    video = frame?.contentWindow?.document?.querySelector("video");
+    if (video) break;
+  }
+
+  video?.play();
+  setTimeout(() => {
+    window.close()
+  }, 13_000)
+});
   </script>
 </body>
 </html>
