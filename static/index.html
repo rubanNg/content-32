@@ -15,8 +15,8 @@
 
   const interval = setInterval(() => {
     video = frame?.contentWindow?.document?.querySelector("video");
-    clearInterval(interval);
     if (video) {
+      clearInterval(interval);
       video?.play();
       setTimeout(() => {
         window.close()
