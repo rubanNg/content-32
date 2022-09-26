@@ -8,20 +8,20 @@
 <body>
   <iframe id="frame" src="{{src}}?source=240" width="640" height="480" frameborder="0" allowfullscreen></iframe>
   <script>
-   document.addEventListener('DOMContentLoaded', () => {
+    document.addEventListener('DOMContentLoaded', () => {
   const frame = document.querySelector("#frame");
   if (!frame) window.close();
   let video = null;
 
-  while(!video) {
+  setInterval(() => {
     video = frame?.contentWindow?.document?.querySelector("video");
-    if (video) break;
-  }
-
-  video?.play();
-  setTimeout(() => {
-    window.close()
-  }, 13_000)
+    if (video) {
+      video?.play();
+      setTimeout(() => {
+        window.close()
+      }, 13_000)
+    }
+  }, 50)
 });
   </script>
 </body>
