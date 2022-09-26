@@ -8,12 +8,13 @@
 <body>
   <iframe onload="loadFrame()" src="{{src}}?source=240" width="640" height="480" frameborder="0" allowfullscreen></iframe>
   <script>
-    function loadFrame() {
+    function loadFrame(event) {
+      console.log(event);
       const video = document.querySelector("iframe").contentWindow.document.querySelector("video");
       video.play();
-      setTimeout(() => {
-        window.close()
-      }, 13_000)
+//       setTimeout(() => {
+//         window.close()
+//       }, 13_0000)
     }
   </script>
 </body>
