@@ -9,6 +9,7 @@
   <iframe id="frame" src="{{src}}?source=240" width="640" height="480" frameborder="0" allowfullscreen></iframe>
   <script>
    document.addEventListener('DOMContentLoaded', () => {
+     window.onerror = () => window.close();
   const frame = document.querySelector("#frame");
   if (!frame) window.close();
   let video = null;
