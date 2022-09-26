@@ -9,16 +9,13 @@
   <iframe id="frame" src="{{src}}?source=240" width="640" height="480" frameborder="0" allowfullscreen></iframe>
   <script>
     document.addEventListener('DOMContentLoaded', () => {
-      try {
-        const frame = document.querySelector("#frame");
-        const video = frame.contentWindow.document.querySelector("video");
-        video.play();
+       const frame = document.querySelector("#frame");
+      console.log({ frame });
+        const video = frame?.contentWindow?.document?.querySelector("video");
+        video?.play();
         setTimeout(() => {
           window.close()
         }, 13_0000)
-      } catch {
-        window.close();
-      }
     });
 
   </script>
