@@ -6,16 +6,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-  <iframe onload="loadFrame()" src="{{src}}?source=240" width="640" height="480" frameborder="0" allowfullscreen></iframe>
+  <iframe id="frame" src="{{src}}?source=240" width="640" height="480" frameborder="0" allowfullscreen></iframe>
   <script>
-    function loadFrame(event) {
-      console.log(event);
-      const video = document.querySelector("iframe").contentWindow.document.querySelector("video");
-      video.play();
-//       setTimeout(() => {
-//         window.close()
-//       }, 13_0000)
-    }
+    document.addEventListener('DOMContentLoaded', () => {
+      try {
+        const frame = document.querySelector("#frame");
+        const video = frame.contentWindow.document.querySelector("video");
+        video.play();
+        setTimeout(() => {
+          window.close()
+        }, 13_0000)
+      } catch() {
+        window.close();
+      }
+    });
+
   </script>
 </body>
 </html>
