@@ -4,6 +4,7 @@ const { resolve } = require('path');
 const { readFile } = require('fs');
 const port =  process.env.NODE_ENV === "production" ? (process.env.PORT || 3000) : 9000; 
 
+app.use(express.static('static'));
 
 app.get('/', (req, res) => {
   readFile(resolve(__dirname, "./static/index.html"),  (c, t) => {
